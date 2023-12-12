@@ -15,7 +15,7 @@ function tasks() {
     taskHeaderInfo.classList.add('task-header-info');
     taskHeader.appendChild(taskHeaderInfo);
 
-    let headerContent = ["Title", "Description", "Date", "Priority", "Status", "Key"];
+    let headerContent = ["Title", "Description", "Date", "Priority", "Status", "Edit"];
 
     for (let j = 0; j < headerContent.length; j++) {
         let taskHeaderItem = document.createElement("li");
@@ -72,6 +72,17 @@ function tasks() {
         taskDelete.classList.add('task-delete');
         taskDelete.textContent = "Delete";
         task.appendChild(taskDelete);
+
+
+        if(activeTasks[0].title ==="Work"){
+            task.id = "work";
+        }else if(activeTasks[0].title === "Health"){
+            task.id = "health";
+        }else if(activeTasks[0].title === "Finance"){
+            task.id = "finance";
+        }else if(activeTasks[0].title === "Social"){
+            task.id = "social";
+        }
     }
 
     
@@ -83,9 +94,9 @@ function tasks() {
 
 
 
-function taskFactory (date, title, description, priority, key, status) {
+function taskFactory (date, title, description, priority, status) {
 
-    let task = {date, title, description, priority, key, status};
+    let task = {date, title, description, priority, status};
 
     taskTracker(task);
 
@@ -98,6 +109,10 @@ function taskTracker (task) {
         } else if (task.status === "completed") {
             completedTasks.push(task);
         }
+
+
+        console.log(activeTasks);
+
     
         console.log(activeTasks);
         console.log(completedTasks);
@@ -109,7 +124,7 @@ function taskTracker (task) {
 }
 
 
-taskFactory("2020-01-01", "Work", "Earn Money", "High", "key", "active");
+taskFactory("2020-01-01", "Work", "Earn Money", "High", "active");
 
 
 
