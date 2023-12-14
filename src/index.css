@@ -80,7 +80,7 @@
 
 .task-header{
     width: 100%;
-    height: 50px;
+    height: 60px;
     background-color: #44074E;
 
     padding: 10px;
@@ -98,7 +98,7 @@
 }
 .task-header-item{
     color: white;
-    font-size: 18px;
+    font-size: 12px;
 }
 
 
@@ -124,4 +124,23 @@
     font-weight: 500;
 }
 
+.filter:hover{
+    cursor: pointer;
+    color: black;
+}
 
+.add-task{
+    width: 80%;
+    height: 50px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+
+    font-size: 22px;
+
+    &:hover{
+        cursor: pointer;
+        background-color: #8b0f7f;
+        color: white;
+        border: 1px solid white ;
+    }
+}

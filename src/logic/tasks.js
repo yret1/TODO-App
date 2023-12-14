@@ -1,4 +1,4 @@
-
+import { addTask } from "./menu";
 
 let activeTasks = [];
 let completedTasks = [];
@@ -63,6 +63,11 @@ function tasks() {
         taskKey.textContent = activeTasks[i].key;
         task.appendChild(taskKey);
 
+        let taskCompleted = document.createElement('button');
+        taskCompleted.classList.add('task-completed');
+        taskCompleted.textContent = "Completed";
+        task.appendChild(taskCompleted);
+
         let taskEdit = document.createElement('button');
         taskEdit.classList.add('task-edit');
         taskEdit.textContent = "Edit";
@@ -85,10 +90,21 @@ function tasks() {
         }
     }
 
-    
 
 
     
+}
+
+
+
+
+function newTask () {
+
+    let newTaskWrapper = document.createElement("section");
+    newTaskWrapper.classList.add('new-task-wrapper');
+    document.body.appendChild(newTaskWrapper);
+    newTaskWrapper.style.display = "flex";
+    newTaskWrapper.style.position = "absolute";
 }
 
 
@@ -124,7 +140,11 @@ function taskTracker (task) {
 }
 
 
-taskFactory("2020-01-01", "Work", "Earn Money", "High", "active");
+
+
+taskFactory("Today", "Work", "Earn Money", "High", "active");
+
+export { taskFactory, tasks, newTask };
 
 
 
